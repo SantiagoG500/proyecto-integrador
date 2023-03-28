@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 1: invalid syntax
+    Character("Monika") zorder 2
+                         ^
+
+Ren'Py Version: Ren'Py 8.0.3.22090809
+Thu Mar 23 20:14:54 2023
