@@ -2,17 +2,20 @@ define profe = Character("Monika")
 
 label start:
     scene fondo
-    show profe at left with moveinleft
+    show profe1 at left with moveinleft
     profe "Welcome, bienvenido."
     profe "Soy Monika, bienvenido a tu clase de ingles, donde aprenderas coasas basicas que te ayudaran en tu aprendizaje."
     profe "Esto esta enfocado a todo publico, asi que si ya tienes conociemiento en ingles tambien puedes complementarlo."
     profe "¿Tienes conocimiento en ingles?"
     menu:
         "SI":
+            hide profe1
+            show hpyprofe at left
             profe "¡Genial!, podras complementar lo que ya haz aprendido, selecciona un nivel para comenzar."
 
 
         "NO":
+            show profe1 at left
             profe "No te preocupes, aqui parenderas lo basico, comenzaremos con el nivel 1"
 
     menu:
@@ -20,7 +23,8 @@ label start:
             jump nivel1
 
 label nivel1:
-    show profe at left with moveinleft
+    hide hpyprofe
+    show profe1 at left with moveinleft
     profe "Comenzaremos con lo basico, ¡ANIMALES!, a todos nos gustan los animales, asi que veamos como es su nombre en ingles."
     profe "Primero algunos animales domesticos."
     show dog 
