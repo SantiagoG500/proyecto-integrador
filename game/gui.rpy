@@ -29,7 +29,8 @@ define gui.accent_color = '#990000'
 define gui.idle_color = '#aaaaaa'
 
 ## El color 'small' se usa para el texto pequeño, que necesita destacar más.
-define gui.idle_small_color = '#888888'
+define gui.idle_small_color = '#ffffff'
+
 
 ## El color usado en botones y barras que ganan foco.
 define gui.hover_color = '#990000'
@@ -188,6 +189,8 @@ define gui.page_button_borders = Borders(15, 6, 15, 6)
 
 define gui.quick_button_borders = Borders(15, 6, 15, 0)
 define gui.quick_button_text_size = 21
+
+# define gui.quick_button_text_idle_color = gui.idle_small_color
 define gui.quick_button_text_idle_color = gui.idle_small_color
 define gui.quick_button_text_selected_color = gui.accent_color
 
@@ -209,7 +212,9 @@ define gui.choice_button_borders = Borders(150, 8, 150, 8)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_idle_color = "#cccccc"
+
+# TEXTO DE LOS BOTONES DE OPCION
+define gui.choice_button_text_idle_color = "#500909"
 define gui.choice_button_text_hover_color = "#ffffff"
 define gui.choice_button_text_insensitive_color = "#444444"
 

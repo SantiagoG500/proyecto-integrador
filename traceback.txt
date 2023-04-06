@@ -1,72 +1,43 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While processing text tag {b/} in 'A los peces se les dice {b} Fish, OJO {/b} a las palabra que finalizan en {b} SH {/b} se le escribe {b} ES {b/} Fish{b}es{/b}.'.:
-  File "game/script.rpy", line 53, in script
-    profe "A los peces se les dice {b} Fish, OJO {/b} a las palabra que finalizan en {b} SH {/b} se le escribe {b} ES {b/} Fish{b}es{/b}."
-Exception: Unknown text tag 'b/'
+While processing the idle_color property of style quick_button_text:
+  File "renpy/common/00start.rpy", line 83, in _init_language
+    renpy.change_language(language)
+  File "renpy/common/00stylepreferences.rpy", line 124, in _m1_00stylepreferences__change_language
+    __update()
+  File "renpy/common/00stylepreferences.rpy", line 96, in _m1_00stylepreferences__update
+    renpy.style.rebuild()
+Exception: Color string u'fffff' must be 3, 4, 6, or 8 hex digits long.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 53, in script
-    profe "A los peces se les dice {b} Fish, OJO {/b} a las palabra que finalizan en {b} SH {/b} se le escribe {b} ES {b/} Fish{b}es{/b}."
-  File "C:\Users\bejar\Documents\UNIVERSIDAD\PROYECTO INT\renpy-8.0.3-sdk\renpy\ast.py", line 921, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\bejar\Documents\UNIVERSIDAD\PROYECTO INT\renpy-8.0.3-sdk\renpy\exports.py", line 1373, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\bejar\Documents\UNIVERSIDAD\PROYECTO INT\renpy-8.0.3-sdk\renpy\character.py", line 1266, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\bejar\Documents\UNIVERSIDAD\PROYECTO INT\renpy-8.0.3-sdk\renpy\character.py", line 927, in do_display
-    display_say(who,
-  File "C:\Users\bejar\Documents\UNIVERSIDAD\PROYECTO INT\renpy-8.0.3-sdk\renpy\character.py", line 666, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\bejar\Documents\UNIVERSIDAD\PROYECTO INT\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\bejar\Documents\UNIVERSIDAD\PROYECTO INT\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\bejar\Documents\UNIVERSIDAD\PROYECTO INT\renpy-8.0.3-sdk\renpy\display\core.py", line 3912, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "C:\Users\bejar\Documents\UNIVERSIDAD\PROYECTO INT\renpy-8.0.3-sdk\renpy\display\core.py", line 2602, in draw_screen
-    surftree = renpy.display.render.render_screen(
-  File "render.pyx", line 495, in renpy.display.render.render_screen
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\bejar\Documents\UNIVERSIDAD\PROYECTO INT\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\bejar\Documents\UNIVERSIDAD\PROYECTO INT\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\bejar\Documents\UNIVERSIDAD\PROYECTO INT\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\bejar\Documents\UNIVERSIDAD\PROYECTO INT\renpy-8.0.3-sdk\renpy\display\screen.py", line 704, in render
-    child = renpy.display.render.render(self.child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\bejar\Documents\UNIVERSIDAD\PROYECTO INT\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\bejar\Documents\UNIVERSIDAD\PROYECTO INT\renpy-8.0.3-sdk\renpy\display\layout.py", line 1334, in render
-    surf = render(child,
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\bejar\Documents\UNIVERSIDAD\PROYECTO INT\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\bejar\Documents\UNIVERSIDAD\PROYECTO INT\renpy-8.0.3-sdk\renpy\text\text.py", line 2109, in render
-    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
-  File "C:\Users\bejar\Documents\UNIVERSIDAD\PROYECTO INT\renpy-8.0.3-sdk\renpy\text\text.py", line 627, in __init__
-    self.paragraphs = self.segment(text.tokens, style, renders, text)
-  File "C:\Users\bejar\Documents\UNIVERSIDAD\PROYECTO INT\renpy-8.0.3-sdk\renpy\text\text.py", line 1278, in segment
-    raise Exception("Unknown text tag %r" % text)
-Exception: Unknown text tag 'b/'
+  File "renpy/bootstrap.py", line 277, in bootstrap
+    renpy.main.main()
+  File "renpy/main.py", line 660, in main
+    run(restart)
+  File "renpy/main.py", line 76, in run
+    renpy.translation.init_translation()
+  File "renpy/translation/__init__.py", line 583, in init_translation
+    renpy.store._init_language() # type: ignore
+  File "renpy/common/00start.rpy", line 83, in _init_language
+    renpy.change_language(language)
+  File "renpy/translation/__init__.py", line 672, in change_language
+    i()
+  File "renpy/common/00stylepreferences.rpy", line 124, in _m1_00stylepreferences__change_language
+    __update()
+  File "renpy/common/00stylepreferences.rpy", line 96, in _m1_00stylepreferences__update
+    renpy.style.rebuild()
+  File "style.pyx", line 796, in renpy.style.rebuild
+  File "style.pyx", line 789, in renpy.style.build_styles
+  File "style.pyx", line 710, in renpy.style.build_style
+  File "style.pyx", line 707, in renpy.style.build_style
+  File "gen-static/style_idle_functions.pyx", line 540, in style_idle_functions.idle_color_property
+  File "renpy/color.py", line 167, in __new__
+    raise Exception("Color string {!r} must be 3, 4, 6, or 8 hex digits long.".format(c))
+Exception: Color string u'fffff' must be 3, 4, 6, or 8 hex digits long.
 
 Windows-10-10.0.22621 AMD64
-Ren'Py 8.0.3.22090809
+Ren'Py 7.5.3.22090809
 PROYECTO INT 1.0
-Thu Mar 23 11:46:09 2023
+Tue Mar 28 18:42:18 2023
