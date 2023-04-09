@@ -13,7 +13,7 @@ label start:
 
         "NO":
             show profe1 at left
-            profe "¡No hay problema!,te enseñaré lo mas básico y facil para empezar, entonces selecciona el nivel 1"
+            profe "¡No hay problema!, te enseñaré lo mas básico y facil para empezar, entonces selecciona el nivel 1"
 
     menu:
         "Nivel 1":
@@ -23,14 +23,14 @@ label nivel1:
     show profe at left with moveinleft
     hide hpyprofe
     show profe1 at left with moveinleft
-    profe "Este es el nivel 1 y adivina, iniciameros con... ¡ANIMALES!, a todos nos gustan los animales, asi que veremos como se les dice en el extranjero."
+    profe "Este es el nivel 1 y adivina, iniciaremos con... ¡ANIMALES!, a todos nos gustan los animales, asi que veremos como se les dice en el extranjero."
     profe "Primero, animales domésticos."
     show dog
     profe "Primero, considerada la mascota favorita, cuando solo es uno, el perro es llamado{b} (Dog) {/b}, pero cuando son 2 o mas agregamos una {b} S {/b} al final, entonces quedaria {b} (Dogs) {/b}."
     hide dog
     profe "vamos con otro"
     show cat
-    profe "Felinos, el gato es llamado {b} (Cat) {/b},y si son más de 2 son {b} (Cats) {/b}."
+    profe "Los felinos, el gato es llamado {b} (Cat) {/b},y si son más de 2 son {b} (Cats) {/b}."
     hide cat 
     show bird  
     profe "Algunas personas tienen aves como mascotas, en general pájaros, 1 solo es {b} (Bird) {/b} y varios son {b} (Birds) {/b}."
