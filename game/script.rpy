@@ -64,10 +64,10 @@ label nivel1:
     profe "A los peces se les dice {b} Fish, ¡CUIDADO! {/b} a las palabra que finalizan en {b} SH {/b} se les añade {b} ES {/b} al final para si quedar Fish{b}es{/b}."
     hide fish 
     profe "Ok, creo que estás listo para un pequeño Test"
-    profe "¿Como se le dice a los perros?"
-
+    
 label pregunta1:
     show profe1 at left
+    profe "¿Como se le dice a los perros?"
     menu:
         "Dog":
             profe "Fine, (muy bien), siguiente pregunta:"
@@ -90,6 +90,14 @@ label pregunta1:
             profe "Lizard se les dice a las lagartijas"
             hide lizard
             jump pregunta1
+label pregunta2:
+    show profe1 at left
+    porfe "Como se les dice a las vacas"
+    menu:
+        "Sheep":
+            hide profe1
+            show profe5
+            profe "..."
 
     profe "Ahora veremos algunos animales salvajes"
     show lion  
