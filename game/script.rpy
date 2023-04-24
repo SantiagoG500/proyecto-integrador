@@ -1,5 +1,7 @@
 define profe = Character("Monika")
-
+init:
+    $ contador = 0
+    
 label start:
     scene fondo
     show profe1 at left with moveinleft
@@ -38,7 +40,7 @@ label nivel1:
     show bird  
     profe "Algunas personas tienen aves como mascotas, en general pájaros, 1 solo es {b} (Bird) {/b} y varios son {b} (Birds) {/b}."
     hide bird 
-    profe "Vamos bien, sigamos aprendiendo"
+    profe "Vamos bien, sigamos aprendiendo. Ahora veremos animales de granja (farm animals)"
     show cow  
     profe "A las vacas se les dice {b} Cow {/b}"
     hide cow 
@@ -49,7 +51,7 @@ label nivel1:
     profe "A las cabras se les dice {b} Goat {/b}"
     hide goat 
     show sheep  
-    profe "A las ovejas se les dice {b} Sheep {/b} o {b} lamb {/b}"
+    profe "A las ovejas se les dice {b} Sheep {/b} o {b} Lamb {/b}"
     hide sheep 
     show rabbit  
     profe "A los conejos se les dice {b} Rabbit {/b} o {b} Bunny {/b}"
@@ -70,35 +72,186 @@ label pregunta1:
     profe "¿Como se le dice a los perros?"
     menu:
         "Dog":
-            profe "Fine, (muy bien), siguiente pregunta:"
+            hide profe1
+            show profe2 at left
+            profe "Fine, (muy bien), vamos con siguiente pregunta:"
+            $ contador = contador + 1
+            jump pregunta2
         "Cat":
             hide profe1
-            show profe5 at left
-            profe "Oh no!, recuerda, Cat es gato."
+            show profe5 at left with vpunch
+            profe "Oh no!, recuerda, Cat es gato, vamos con la siguiente pregunta."
             hide profe5
-            jump pregunta1
+            jump pregunta2
         "Bird":
             hide profe1
-            show profe5 at left
-            profe "a little wrong, recuerda, Bird es ave."
+            show profe5 at left with vpunch
+            profe "a little wrong, recuerda, Bird es ave, vamos con la siguiente pregunta."
             hide profe5
-            jump pregunta1
+            jump pregunta2
         "Lizard":
-            hide porfe5
             profe "Incorrecto, aunque seguro fué la curiosidad"
             show lizard 
-            profe "Lizard se les dice a las lagartijas"
+            profe "Lizard se les dice a las lagartijas, intentalo nuevamente"
             hide lizard
             jump pregunta1
 label pregunta2:
     show profe1 at left
-    porfe "Como se les dice a las vacas"
+    profe "Como se les dice a las vacas"
     menu:
         "Sheep":
             hide profe1
-            show profe5
-            profe "..."
+            show profe5 at left with vpunch
+            profe "Incorrecto, Sheep es oveja, vamos con la siguiente pregunta"
+            hide profe5
+            jump pregunta3
+        "Horse":
+            hide profe1
+            show profe5 at left with vpunch
+            profe "Casi... recuerda que Horse es caballo, vamos con la siguiente pregunta"
+            jump pregunta3
+        "Cow":
+            hide profe1
+            show profe2 at left
+            profe "Correcto, facil ¿verdad?, vamos con la siguiente pregunta"
+            hide profe2
+            $ contador = contador +1
+            jump pregunta3
+        "Chicken":
+            hide profe1
+            show profe5 at left with vpunch
+            profe "La proxima te irá bien, pero recuerda que Chicken es gallina"
+            profe "Vamos a la siguiente pregunta"
+            hide profe5
+            jump pregunta3
+label pregunta3:
+    show profe1 at left
+    profe "A partir de aquí encontrarás respuestas falsas, Be careful(Ten cuidado)"
+    profe "como se les dice a las serpientes"
+    menu:
+        "Rabbit":
+            hide profe1
+            show profe4 at left with vpunch
+            profe "Rabbit es conejo, mejor suerte para la proxima"
+            hide profe4
+            jump pregunta4
+        "Shake":
+            hide profe1
+            show profe5 at left with vpunch
+            profe "Oh, estuviste muy cerca, la palabra (Shake) significa sacudir o agitar aunque es muy similar a Snake su significado es muy diferente"
+            hide profe5
+            jump pregunta4
+        "Snake":
+            hide profe1
+            show profe2 at left
+            profe "Bien hecho, distingues muy bien las palabras"
+            hide profe2
+            $ contador = contador +1
+            jump pregunta4
+        "Snail":
+            hide profe1
+            show profe5 at left with vpunch
+            profe "Wrong, Snail es caracol pero estuviste cerca"
+            hide profe5
+            jump pregunta4
+        "Skane":
+            hide profe1
+            show profe5 at left with vpunch
+            profe "Este es a proposito aunque estas casi en lo correcto, para la proxima revisa bien las letras"
+            hide profe5
+            jump pregunta4
+label pregunta4:
+    show profe1 at left
+    profe "como se les dice al pez en plural(varios)"
+    menu:
+        "Fisherman":
+            hide profe1
+            show profe4 at left with vpunch
+            profe "Incorrecto"
+            profe "Por si te lo preguntas esto significa pescador"
+            hide profe1
+            jump pregunta5
+        "Fish":
+            hide profe1
+            show profe4 at left with vpunch
+            profe "Estuviste cerca... era el plural asi que era Fishes, pero vas bien"
+            hide profe4
+            jump pregunta5
+        "Fishes":
+            hide profe1
+            show profe2 at left
+            profe "Well done (Bien hecho) identificaste bien la respuesta correcta"
+            hide profe2
+            $ contador = contador +1
+            jump pregunta5
+        "Lamb":
+            hide profe1
+            show profe4 at left with vpunch
+            profe "recuerda que a la oveja se le puede decir sheep o lamb por lo cual estas equivocado"
+            hide profe4
+            jump pregunta5
+label pregunta5:
+    show profe1 at left
+    profe "Como se les dice a las ovejas"
+    menu:
+        "Fishes":
+            hide profe1
+            show profe4 at left with vpunch
+            profe "Wrong (incorrecto), fish es pez y fishes son peces"
+            hide profe4
+            jump resultadoTest1
+        "Sheep":
+            hide profe1
+            show profe2 at left
+            profe "muy bien, tienes buen ojo para la gramatica"
+            $ contador = contador + 1
+            hide profe2
+            jump resultadoTest1
+        "Shep":
+            hide profe1
+            show profe4 at left with vpunch
+            profe "¡uy!, esta era un poco complicada, la respuesta es shEEp (sheP es incorrecto) recuerda la forma de escritura"
+            hide profe4
+            jump resultadoTest1
+        "Goat":
+            hide profe1
+            show profe4 at left with vpunch
+            profe "Goat es cabra."
+            hide profe4
+            jump resultadoTest1
+    
+label resultadoTest1:
 
+    if contador == 5:
+        hide profe5
+        show profe2 at left
+        profe "¡Excelente trabajo!"
+        hide profe2
+    if contador == 3 or contador == 4:
+        hide profe5
+        show profe1 at left
+        profe "Bien hecho, cometiste unos erroes pero no te preocupes, si quiere puede volver a intentar el test"
+        profe "¿Quieres intentarlo"
+        menu:
+            "SI":
+                profe "De acuerdo hagamoslo de nuevo"
+                $ contador = 0
+                hide profe1
+                jump pregunta1
+            
+            "NO":
+                "De acuerdo, entonces continuemos"
+
+    if contador == 0 or contador <= 2:
+        show profe5 at left
+        profe "Parece que no entendiste bien, intentalo de nuevo"
+        $ contador = 0
+        hide profe5
+        jump pregunta1
+
+
+    
+    show profe1 at left
     profe "Ahora veremos algunos animales salvajes"
     show lion  
     profe "Al los leones se le dice {b} Lion {/b}"
@@ -143,3 +296,68 @@ label pregunta2:
     hide canguro 
     show crocodile  
     profe "Finalmente a los cocodrilos se les dice {b} Crocodile {/b}. Como dato, a los caimanes los podemos llamar {b} Caiman {/b}, pero tambien los podemos llamar {b} Alligator {/b} o {b} Alligators {/b}."
+    hide crocodile
+    profe "Ahora veamos rapidamente como se le dice a algunos alimentos, a la comida en ingles se le dice {b}Food{/b}."
+    profe "Vamos a comenzar con algunas frutas, en ingles {b}Fruits{/b}."
+    show apple
+    profe "A las manzanas se les dice {b}Apple{/b}."
+    hide apple
+    show orange
+    profe "A las naranjas se les dice Orange, además del color naranja, tambien se le dice {b}Orange{/b}."
+    hide orange
+    show grapes
+    profe "A las uvas se les dice {b}Grapes{/b}."
+    hide grapes
+    show pineapple
+    profe "A las piñas se les dice {b}Pineapple{/b}."
+    hide pineapple
+    show pear
+    profe "A las peras se les dice {b}Pear{/b}."
+    hide pear
+    show lemon
+    profe "A los limones se les dice {b}Lemon{/b}"
+    hide lemon
+    show tangerines
+    profe "A las mandarinas se les dice {b}Tangerines{/b}."
+    hide tangerines
+    show banana
+    profe "A los platanos se les dice {b}Bananas{/b}."
+    profe "Esta palabra tambien la usamos en el español."
+    profe "¿Recuerdas como se les dice a las palabras que son iguales en el español e ingles?"
+label fastquest:
+    show profe6 at left
+    menu:
+        "Sinonimos":
+            show profe5 at left with vpunch
+            profe "!Ups¡"
+            profe "Los sinonimos son palabras con igual {b}significado{/b}."
+            hide profe5
+        "Gognados":
+            show profe2 at left
+            profe "Very well (Muy bien), sigamos."
+            hide profe1
+
+        "Homonimos":
+            show profe4 at left with vpunch
+            profe "Incorrecto, los Homonimos son palbras iguales pero con diferente significado."
+            hide profe4
+
+        "Adgetivos":
+            show profe5 at left with vpunch
+            profe "Incorrecto"
+            profe "Los adjetivos son las palabras que describen algo."
+            hide profe5
+    show profe1 at left
+    profe "Continuamos con..."
+    show mango 
+    porfe "{b}Mangos{/b}, este tambien es un cognado"
+    hide mango
+    show strawberry
+    profe "A las fresas se les dice {b}Strawberry{/b} ten cuidado de no escribir mal esta palabra."
+    hide strawberry
+    profe "Ahora veremos algunas verduras, o en ingles {b}Vegetables"
+    
+
+
+
+
