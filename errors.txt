@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1: invalid syntax
-    Character("Monika") zorder 2
-                         ^
+File "game/script.rpy", line 590: end of line expected.
+    profe "A los tomates se les dice tomato, ojo aqui, al igual que a las palabra que terminan en ""SH"", para las palabras que finalizan en ""O"", se les agrega ""ES"" para su forma plural."
+                                                                                                   ^
+
+File "game/script.rpy", line 594: end of line expected.
+    profe "A las papas se les dice potato, y al igual que con tomato, su forma plural es agregando "" ES "" al final."
+                                                                                                    ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Thu Mar 23 20:14:54 2023
+Mon May  8 11:02:18 2023

@@ -13,13 +13,13 @@
 ##
 ## El _() que rodea la cadena de texto la señala como traducible.
 
-define config.name = _("PROYECTO INT")
+define config.name = _("ENGLISH TIME")
 
 
 ## Determina si el título dado más arriba se muestra en el menú principal.
 ## Ajústalo a 'False' para ocultar el título.
 
-define gui.show_name = True
+define gui.show_name = False
 
 
 ## Versión del juego.
@@ -49,6 +49,7 @@ define build.name = "PROYECTOINT"
 define config.has_sound = True
 define config.has_music = True
 define config.has_voice = True
+define config.main_menu_music = "audio/musica_menu.mp3"
 
 
 ## Para permitir al usuario probar el volumen de los canales de sonido o voz,

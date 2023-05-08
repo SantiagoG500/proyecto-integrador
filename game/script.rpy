@@ -1,8 +1,12 @@
 define profe = Character("Monika")
+define elena = Character("Elena")
 init:
-    $ contador = 0
+    $ contador1 = 0
+    $ contador2 = 0
+
     
 label start:
+    play music "audio/musica_game.mp3"
     scene fondo
     show profe1 at left with moveinleft
     profe "Hello there and welcome to your new english class (Hola y bienvenido a tu nueva clase de inglés)."
@@ -74,18 +78,21 @@ label pregunta1:
         "Dog":
             hide profe1
             show profe2 at left
+            play sound "audio/correct-fx.mp3"
             profe "Fine, (muy bien), vamos con siguiente pregunta:"
-            $ contador = contador + 1
+            $ contador1 = contador1 + 1
             jump pregunta2
         "Cat":
             hide profe1
+            play sound "audio/incorrect-fx.mp3"
             show profe5 at left with vpunch
             profe "Oh no!, recuerda, Cat es gato, vamos con la siguiente pregunta."
             hide profe5
             jump pregunta2
         "Bird":
             hide profe1
-            show profe5 at left with vpunch
+            sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunchplay 
             profe "a little wrong, recuerda, Bird es ave, vamos con la siguiente pregunta."
             hide profe5
             jump pregunta2
@@ -101,24 +108,28 @@ label pregunta2:
     menu:
         "Sheep":
             hide profe1
+            play sound "audio/incorrect-fx.mp3"
             show profe5 at left with vpunch
             profe "Incorrecto, Sheep es oveja, vamos con la siguiente pregunta"
             hide profe5
             jump pregunta3
         "Horse":
             hide profe1
+            play sound "audio/incorrect-fx.mp3"
             show profe5 at left with vpunch
             profe "Casi... recuerda que Horse es caballo, vamos con la siguiente pregunta"
             jump pregunta3
         "Cow":
             hide profe1
             show profe2 at left
+            play sound "audio/correct-fx.mp3"
             profe "Correcto, facil ¿verdad?, vamos con la siguiente pregunta"
             hide profe2
-            $ contador = contador +1
+            $ contador1 = contador1 +1
             jump pregunta3
         "Chicken":
             hide profe1
+            play sound "audio/incorrect-fx.mp3"
             show profe5 at left with vpunch
             profe "La proxima te irá bien, pero recuerda que Chicken es gallina"
             profe "Vamos a la siguiente pregunta"
@@ -126,38 +137,38 @@ label pregunta2:
             jump pregunta3
 label pregunta3:
     show profe1 at left
-    profe "A partir de aquí encontrarás respuestas falsas, Be careful(Ten cuidado)"
-    profe "como se les dice a las serpientes"
+    profe "como se les dice a los conejos"
     menu:
         "Rabbit":
             hide profe1
+            play sound "audio/correct-fx.mp3"
+            show profe2 at left
+            profe "Muy bien, siguiente pregunta."
+            hide profe2
+            $ contador1 = contador1 + 1
+            jump pregunta4
+        "Rebbit":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Casi, no te dejes confundir, recuerda leer siemrpe bien las palabras."
+            profe "Siguente pregunta."
+            hide profe5
+            jump pregunta4
+        "Bouny":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
             show profe4 at left with vpunch
-            profe "Rabbit es conejo, mejor suerte para la proxima"
+            profe "Casi, pero no es."
+            profe "Siguiente pregunta."
             hide profe4
             jump pregunta4
-        "Shake":
+        "Banny":
             hide profe1
+            play sound "audio/incorrect-fx.mp3"
             show profe5 at left with vpunch
-            profe "Oh, estuviste muy cerca, la palabra (Shake) significa sacudir o agitar aunque es muy similar a Snake su significado es muy diferente"
-            hide profe5
-            jump pregunta4
-        "Snake":
-            hide profe1
-            show profe2 at left
-            profe "Bien hecho, distingues muy bien las palabras"
-            hide profe2
-            $ contador = contador +1
-            jump pregunta4
-        "Snail":
-            hide profe1
-            show profe5 at left with vpunch
-            profe "Wrong, Snail es caracol pero estuviste cerca"
-            hide profe5
-            jump pregunta4
-        "Skane":
-            hide profe1
-            show profe5 at left with vpunch
-            profe "Este es a proposito aunque estas casi en lo correcto, para la proxima revisa bien las letras"
+            profe "Casi, no te dejes confundir, recuerda leer siemrpe bien las palabras."
+            profe "siguiente pregunta"
             hide profe5
             jump pregunta4
 label pregunta4:
@@ -166,6 +177,7 @@ label pregunta4:
     menu:
         "Fisherman":
             hide profe1
+            play sound "audio/incorrect-fx.mp3"
             show profe4 at left with vpunch
             profe "Incorrecto"
             profe "Por si te lo preguntas esto significa pescador"
@@ -173,6 +185,7 @@ label pregunta4:
             jump pregunta5
         "Fish":
             hide profe1
+            play sound "audio/incorrect-fx.mp3"
             show profe4 at left with vpunch
             profe "Estuviste cerca... era el plural asi que era Fishes, pero vas bien"
             hide profe4
@@ -180,12 +193,14 @@ label pregunta4:
         "Fishes":
             hide profe1
             show profe2 at left
+            play sound "audio/correct-fx.mp3"
             profe "Well done (Bien hecho) identificaste bien la respuesta correcta"
             hide profe2
-            $ contador = contador +1
+            $ contador1 = contador1 +1
             jump pregunta5
         "Lamb":
             hide profe1
+            play sound "audio/incorrect-fx.mp3"
             show profe4 at left with vpunch
             profe "recuerda que a la oveja se le puede decir sheep o lamb por lo cual estas equivocado"
             hide profe4
@@ -196,6 +211,7 @@ label pregunta5:
     menu:
         "Fishes":
             hide profe1
+            play sound "audio/incorrect-fx.mp3"
             show profe4 at left with vpunch
             profe "Wrong (incorrecto), fish es pez y fishes son peces"
             hide profe4
@@ -203,31 +219,37 @@ label pregunta5:
         "Sheep":
             hide profe1
             show profe2 at left
+            play sound "audio/correct-fx.mp3"
             profe "muy bien, tienes buen ojo para la gramatica"
-            $ contador = contador + 1
+            $ contador1 = contador1 + 1
             hide profe2
             jump resultadoTest1
         "Shep":
             hide profe1
+            play sound "audio/incorrect-fx.mp3"
             show profe4 at left with vpunch
             profe "¡uy!, esta era un poco complicada, la respuesta es shEEp (sheP es incorrecto) recuerda la forma de escritura"
             hide profe4
             jump resultadoTest1
         "Goat":
             hide profe1
+            play sound "audio/incorrect-fx.mp3"
             show profe4 at left with vpunch
-            profe "Goat es cabra."
+            profe "Incorrecto, Goat es cabra."
             hide profe4
             jump resultadoTest1
     
 label resultadoTest1:
+    show profe1 at left
+    profe "Bueno revisemos tus resultados..."
 
-    if contador == 5:
+    if contador1 == 5:
         hide profe5
         show profe2 at left
         profe "¡Excelente trabajo!"
         hide profe2
-    if contador == 3 or contador == 4:
+
+    if contador1 == 3 or contador1 == 4:
         hide profe5
         show profe1 at left
         profe "Bien hecho, cometiste unos erroes pero no te preocupes, si quiere puede volver a intentar el test"
@@ -235,17 +257,17 @@ label resultadoTest1:
         menu:
             "SI":
                 profe "De acuerdo hagamoslo de nuevo"
-                $ contador = 0
+                $ contador1 = 0
                 hide profe1
                 jump pregunta1
             
             "NO":
                 "De acuerdo, entonces continuemos"
 
-    if contador == 0 or contador <= 2:
+    if contador1 == 0 or contador1 <= 2:
         show profe5 at left
         profe "Parece que no entendiste bien, intentalo de nuevo"
-        $ contador = 0
+        $ contador1 = 0
         hide profe5
         jump pregunta1
 
@@ -297,6 +319,204 @@ label resultadoTest1:
     show crocodile  
     profe "Finalmente a los cocodrilos se les dice {b} Crocodile {/b}. Como dato, a los caimanes los podemos llamar {b} Caiman {/b}, pero tambien los podemos llamar {b} Alligator {/b} o {b} Alligators {/b}."
     hide crocodile
+    profe "Perfecto, ahora hagamos otra ronda de preguntas"
+
+
+label pregunta6:
+    show profe1 at left
+    profe "¿Como se les dice a los lobos?, en prural"
+    menu:
+        "Wolfs":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left
+            profe "Incorrecto."
+            porfe "Siguiente pregunta."
+            jump pregunta7
+        "Wolfes":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left
+            profe "Incorrecto."
+            profe "Siguiente pregunta."
+            jump pregunta7
+        "Wolves":
+            hide profe1
+            show profe2 at left 
+            play sound "audio/correct-fx.mp3"
+            profe "Correcto, muy bien."
+            profe "sigamos con la siguiente pregunta."
+            $contador2 = contador2 +1
+            jump pregunta7
+        "Wloves":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left
+            profe "Incorrecto, fijate bien, estaba mal escrito."
+            porfe "Siguiente pregunta."
+            jump pregunta7
+
+label pregunta7:
+    show profe1 at left
+    profe "¿Como se les dice a los osos?"
+    menu: 
+        "Beard":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Incorrecto, Bread significa {b}Barba{/b}."
+            profe "Hay algunas palabras que parecen pronunciarse igual, sin embargo son diferentes, be careful with it (Ten cuidado con eso)"
+            profe "Siguiente pregunta."
+
+        "Bear":
+            hide profe1
+            show profe2 at left 
+            play sound "audio/correct-fx.mp3"
+            profe "Correcto, muy bien."
+            profe "sigamos con la siguiente pregunta."
+            $contador2 = contador2 +1
+
+        "Bread":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Incorrecto, Bread significa {b}Pan{/b}."
+            profe "Hay algunas palabras que parecen pronunciarse igual, sin embargo son diferentes, be careful with it (Ten cuidado con eso)"
+            profe "Siguiente pregunta."
+
+        "Brear":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Incorrecto."
+            profe "Siguiente pregunta."
+
+label pregunta8:
+    show profe1 at left
+    profe "¿Como se le dice a los jaguares?"
+    menu:
+        "Juagar":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Incorrecto."
+            profe "Siguiente pregunta."
+
+        "Cougar":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Incorrecto, cougar es {b}puma{/b}"
+            profe "Siguiente pregunta."
+
+        "Jaguar":
+            hide profe1
+            show profe2 at left 
+            play sound "audio/correct-fx.mp3"
+            profe "Correcto, muy bien, facil verdad."
+            profe "sigamos con la siguiente pregunta."
+            $contador2 = contador2 +1
+
+        "Jagaur":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Incorrecto."
+            profe "Siguiente pregunta."
+
+label pregunta9:
+    profe "¿Como se les dice a las ranas?"
+    menu:
+        "Flogs":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe4 at left with vpunch
+            profe "Incorrecto."
+            profe "Sigamos con la ultima pregunta pregunta."
+
+        "Frogs":
+            hide profe1
+            show profe2 at left 
+            play sound "audio/correct-fx.mp3"
+            profe "Correcto, muy bien."
+            profe "Sigamos con la ultima pregunta."
+            $contador2 = contador2 +1
+
+        "Frugs":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe4 at left with vpunch
+            profe "Incorrecto."
+            profe "Vamos con la ultima pregunta."
+        
+        "Frosg":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe4 at left with vpunch
+            profe "Incorrecto, recuerda revisar bien las palabras."
+            profe "Vamos con la ultima pregunta."
+
+label pregunta10:
+    show profe1 at left
+    profe "Esta pregunta es un poco diferente"
+    profe "¿Elephant es un congnado?"
+    menu:
+        "Si":
+            hide profe1
+            show profe2 at left
+            play sound "audio/correct-fx.mp3"
+            profe "muy bien"
+            hide profe2
+            show profe1 at left
+            profe "Elephant si es un cognado, no necesariamente deben escribirse igual, pero son muy similares y si comparten el mismo significado"
+            $ contador2 = contador2 + 1
+            hide profe1
+            jump resultadoTest2
+
+        "No":
+            hide profe 
+            show profe4 at left
+            profe "Elephant si es un cognado"
+            hide profe4 
+            show profe1 at left
+            profe "Los cognados no necesariamente deben escribirse igual, por lo tanto Elephant si es un cognado" 
+            hide profe1
+            jump resultadoTest2
+
+label resultadoTest2:
+    show profe1 at left
+    profe "Bueno revisemos tus resultados..."
+
+    if contador2 == 5:
+        hide profe5
+        show profe2 at left
+        profe "¡Excelente trabajo!"
+        hide profe2
+
+    if contador2 == 3 or contador2 == 4:
+        hide profe5
+        show profe1 at left
+        profe "Bien hecho, cometiste unos erroes pero no te preocupes, si quiere puede volver a intentar el test"
+        profe "¿Quieres intentarlo"
+        menu:
+            "SI":
+                profe "De acuerdo hagamoslo de nuevo"
+                $ contador2 = 0
+                hide profe1
+                jump pregunta1
+            
+            "NO":
+                "De acuerdo, entonces continuemos"
+                
+
+    if contador2 == 0 or contador2 <= 2:
+        show profe5 at left
+        profe "Parece que no entendiste bien, intentalo de nuevo"
+        $ contador2 = 0
+        hide profe5
+        jump pregunta6
+
+
     profe "Ahora veamos rapidamente como se le dice a algunos alimentos, a la comida en ingles se le dice {b}Food{/b}."
     profe "Vamos a comenzar con algunas frutas, en ingles {b}Fruits{/b}."
     show apple
@@ -323,39 +543,95 @@ label resultadoTest1:
     show banana
     profe "A los platanos se les dice {b}Bananas{/b}."
     profe "Esta palabra tambien la usamos en el español."
-    profe "¿Recuerdas como se les dice a las palabras que son iguales en el español e ingles?"
+    profe "¿Recuerdas como se les dice a las palabras que se escriben igual en el español e ingles y tienen el mismo significado?"
+    hide banana
 label fastquest:
     show profe6 at left
     menu:
         "Sinonimos":
+            hide profe6
+            play sound "audio/incorrect-fx.mp3"
             show profe5 at left with vpunch
             profe "!Ups¡"
             profe "Los sinonimos son palabras con igual {b}significado{/b}."
             hide profe5
-        "Gognados":
+
+        "Cognados":
+            hide profe6
             show profe2 at left
+            play sound "audio/correct-fx.mp3"
             profe "Very well (Muy bien), sigamos."
-            hide profe1
+            hide profe2
 
         "Homonimos":
+            hide profe6
+            play sound "audio/incorrect-fx.mp3"
             show profe4 at left with vpunch
             profe "Incorrecto, los Homonimos son palbras iguales pero con diferente significado."
             hide profe4
 
         "Adgetivos":
+            hide profe6
+            play sound "audio/incorrect-fx.mp3"
             show profe5 at left with vpunch
             profe "Incorrecto"
             profe "Los adjetivos son las palabras que describen algo."
             hide profe5
+
     show profe1 at left
     profe "Continuamos con..."
     show mango 
-    porfe "{b}Mangos{/b}, este tambien es un cognado"
+    profe "{b}Mangos{/b}, este tambien es un cognado"
     hide mango
     show strawberry
     profe "A las fresas se les dice {b}Strawberry{/b} ten cuidado de no escribir mal esta palabra."
     hide strawberry
-    profe "Ahora veremos algunas verduras, o en ingles {b}Vegetables"
+    profe "Ahora veremos algunas verduras, o en ingles {b}Vegetables{/b}."
+    show carrots
+    profe "A las zanahorias se les dice {b}Carrot{/b} o {b}Carrots{/b} en plural."
+    hide carrots
+    show lechuga
+    profe "A la lechuga se le dice {b}Lettuce{/b}."
+    hide lechuga
+    show onions
+    profe "A la cebolla se le dice {b}Onion{/b}."
+    hide onions
+    show tomatoes
+    profe "A los tomates se les dice tomato, ojo aqui, al igual que a las palabra que terminan en 'SH', para las palabras que finalizan en 'O', se les agrega 'ES' para su forma plural."
+    profe "Es decir, el plural de tomato es {b}Tomatoes{/b}."
+    hide tomatoes
+    show potatoes
+    profe "A las papas se les dice potato, y al igual que con tomato, su forma plural es agregando 'ES' al final."
+    hide potatoes
+    show calabaza
+    profe "A las calabazas se les dice {b}Pumpkin{/b}."
+    hide calabaza
+    show rice
+    profe "Al arroz se le dice {b}Rice{/b}."
+    hide rice
+    profe "Ojo, el arroz no es un {b}Vegetable{/b} es un cereal."
+    profe "Esta palabra es un cognado, asi que en ingles tambien se dice {b}Cereal{b}."
+    show lentils
+    profe "A las lentejas se les dice {b}Lentils{/b}."
+    profe "Esta tampoco es un vegetable, es una Legumbre, en ingles {b}Legume{/b}."
+    hide lentils
+    show peas
+    profe "A las arvejas o guisantes se les dice {b}Pea{/b} y {b}Peas{/b}."
+    profe "Esta tambien es una {b}Legume{/b}."
+    hide peas
+    profe "Bueno, para finalizar, haremos el ultimo test, con esto ya completaremos este muy sencillo primer nivel."
+    hide profe1
+    show profe6 at left
+    profe "Y podremos pasar al nivel 2."
+    hide profe6
+
+label pregunta11:
+
+
+
+
+
+
     
 
 
