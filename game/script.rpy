@@ -91,8 +91,8 @@ label pregunta1:
             jump pregunta2
         "Bird":
             hide profe1
-            sound "audio/incorrect-fx.mp3"
-            show profe5 at left with vpunchplay 
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
             profe "a little wrong, recuerda, Bird es ave, vamos con la siguiente pregunta."
             hide profe5
             jump pregunta2

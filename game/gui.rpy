@@ -26,13 +26,15 @@ init python:
 define gui.accent_color = '#990000'
 
 ## El color del botón de texto cuando no está seleccionado ni enfocado.
-define gui.idle_color = '#aaaaaa'
+define gui.idle_color = '#2e2c2c'
+# define gui.idle_color = '#aaaaaa'
 
 ## El color 'small' se usa para el texto pequeño, que necesita destacar más.
 define gui.idle_small_color = '#888888'
 
 ## El color usado en botones y barras que ganan foco.
-define gui.hover_color = '#990000'
+define gui.hover_color = '#ff5555'
+# define gui.hover_color = '#990000'
 
 ## El color del botón de texto seleccionado pero no enfocado. Un botón está
 ## seleccionado si indica el valor actual de la pantalla o preferencia.
