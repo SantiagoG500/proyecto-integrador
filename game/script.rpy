@@ -3,6 +3,7 @@ define elena = Character("Elena")
 init:
     $ contador1 = 0
     $ contador2 = 0
+    $ contador3 = 0
 
     
 label start:
@@ -324,7 +325,7 @@ label resultadoTest1:
 
 label pregunta6:
     show profe1 at left
-    profe "¿Como se les dice a los lobos?, en prural"
+    profe "¿Como se les dice a los lobos?, en plural"
     menu:
         "Wolfs":
             hide profe1
@@ -543,7 +544,7 @@ label resultadoTest2:
     show banana
     profe "A los platanos se les dice {b}Bananas{/b}."
     profe "Esta palabra tambien la usamos en el español."
-    profe "¿Recuerdas como se les dice a las palabras que se escriben igual en el español e ingles y tienen el mismo significado?"
+    profe "ATTENTION!(Atención), ¿Recuerdas como se les dice a las palabras que se escriben igual en el español e ingles y tienen el mismo significado?"
     hide banana
 label fastquest:
     show profe6 at left
@@ -567,7 +568,7 @@ label fastquest:
             hide profe6
             play sound "audio/incorrect-fx.mp3"
             show profe4 at left with vpunch
-            profe "Incorrecto, los Homonimos son palbras iguales pero con diferente significado."
+            profe "Incorrecto, los Homonimos son palabras iguales pero con diferente significado."
             hide profe4
 
         "Adgetivos":
@@ -619,18 +620,259 @@ label fastquest:
     profe "A las arvejas o guisantes se les dice {b}Pea{/b} y {b}Peas{/b}."
     profe "Esta tambien es una {b}Legume{/b}."
     hide peas
-    profe "Bueno, para finalizar, haremos el ultimo test, con esto ya completaremos este muy sencillo primer nivel."
+    profe "Estas a un paso de lograrlo, este es el ultimo test, con esto verás los frutos de tu aprendizaje y completar el primer nivel."
     hide profe1
     show profe6 at left
-    profe "Y podremos pasar al nivel 2."
+    profe "Este test será de PRONUNCIACION con un buen resultado podrás pasar al nivel 2. Y si fallas no te preocupes que podrás reintentarlo"
     hide profe6
 
 label pregunta11:
+    show profe1 at left
+    profe "Are you ready? (Estás listo?) las proguntas seran sobre PRONUNCIATION (pronuncieishion) pronunciación asi que Good Luck and GO! (¡Buena suerte y vamos!)"
+    profe "Como se pronuncia caballo en inglés (recuerda la forma en la que se escribe)"
+    menu:
+        "Horss":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "OH NO, it's wrong (es incorrecto) la siguiente es la buena"
+            hide profe5
+            jump pregunta12
+        "Jurss":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Wrong (incorrecto) suerte en la próxima"
+            hide profe5
+            jump pregunta12
+        "Jorse":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Wrong (incorrecto) recuerda que la E es muda"
+            hide profe5
+            jump pregunta12
+        "Jorss":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Wrong (incorrecto) esta fué trampa ya que cuando una palabra tiene doble ss el sonido se prolonga"
+            hide profe5
+            jump pregunta12
+        "Jors":
+            play sound "audio/correct-fx.mp3"
+            show profe2 at left
+            profe "Well done (Bien hecho), sigue así"
+            hide profe2
+            $ contador3 = contador3 + 1
+            jump pregunta12
+label pregunta12:
+    
+    profe "Como se pronuncia león (lion)"
+    menu:
+        "Leion":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Wrong (incorrecto) casi, te equivocaste por la E"
+            hide profe5
+            jump pregunta13
+        "Layon":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Wrong (incorrecto) cerca... pero recuerda tiene Y, se diria yon cuando debe ser ion"
+            hide profe5
+            jump pregunta13
+        "Laion":
+            play sound "audio/correct-fx.mp3"
+            show profe2 at left
+            profe "Perfect (perfecto) vas muy bien"
+            hide profe2
+            $ contador3 = contador3 + 1
+            jump pregunta13
+        "Leon":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Wrong (incorrecto) esa seria en español"
+            hide profe5
+            jump pregunta13
+label pregunta13:
+    profe "Como se pronuncia vaca (cow)"
+    menu:
+        "Cauw":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Wrong (incorrecto) fallaste por la U"
+            hide profe5
+            jump pregunta14
+        "Moo":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Wrong (incorrecto) jeje ese es el sonido que realizan cuando enseñan en inglés"
+            hide profe5
+            jump pregunta14
+        "Caow":
+            play sound "audio/correct-fx.mp3"
+            show profe2 at left
+            profe "Fantastic (fantastico) buen acierto"
+            hide profe2
+            $ contador3 = contador3 + 1
+            jump pregunta14
+        "Muu":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Wrong (incorrecto) jeje ese es el sonido que realizan con la diferencia que asi lo explican en español"
+            hide profe5
+            jump pregunta14
+label pregunta14:
+    profe "Vamos con una dificil, como se pronuncia calabaza (pumpkin) recuerda decirlo en voz alta y asi lo recordarás en un futuro"
+    menu:
+        "pupkim":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Wrong (incorrecto) es pupmkin y su pronunciacion pompken"
+            hide profe5
+            jump pregunta15
+        "punpkem":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Wrong (incorrecto) es pupmkin y su pronunciacion pompken, recuerda no confundir letras mientras pronuncias"
+            hide profe5
+            jump pregunta15
+        "pumpken":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Wrong (incorrecto) Ohhh estuviste cerca... era con O pomp y elegiste pump pero casi lo lográs"
+            hide profe5
+            jump pregunta15
+        "pompken":
+            play sound "audio/correct-fx.mp3"
+            show profe2 at left
+            profe "Wonderful (maravilloso) complicada pero lo hiciste"
+            hide profe2
+            $ contador3 = contador3 + 1
+            jump pregunta14
+        "pikmin":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Easter Egg (huevo de pascua) ¿sabias que a esta palabra suele confundirsele con zanahoria en los videojuegos de origen japonés?"
+            hide profe5
+            jump pregunta15
+label pregunta15:
+    profe "finalmente como se pronuncia vegetales (vegetables)"
+    menu:
+        "vegetaibol":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Wrong (incorrecto) pequeño fail (fallo)"
+            hide profe5
+            jump pregunta16
+        "vejetabol":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Wrong (incorrecto) pequeño fail (fallo) pero cerca"
+            hide profe5
+            jump pregunta16
+        "vejstebols":
+            play sound "audio/correct-fx.mp3"
+            show profe2 at left
+            profe "Amazing (increible) ahora preparate para la pregunta final más dificil"
+            hide profe2
+            $ contador3 = contador3 + 1
+            jump pregunta16
+        "aguacate":
+            hide profe1
+            play sound "audio/incorrect-fx.mp3"
+            show profe5 at left with vpunch
+            profe "Wrong (incorrecto) en ingles es avocado(avecadou)"
+            hide profe5
+            jump pregunta16
+label pregunta16:
+    profe "Como se DICE mango en inglés"
+    menu:
+        "mango":
+            play sound "audio/correct-fx.mp3"
+            show profe2 at left
+            profe "Wow(guau) estuvo dificil ¿verdad? bien hecho"
+            hide profe2
+            $ contador3 = contador3 + 1
+            jump resultadoTest4
+        "mango":
+            play sound "audio/correct-fx.mp3"
+            show profe2 at left
+            profe "Wow(guau) estuvo dificil ¿verdad? bien hecho"
+            hide profe2
+            $ contador3 = contador3 + 1
+            jump resultadoTest4
+        "mango":
+            play sound "audio/correct-fx.mp3"
+            show profe2 at left
+            profe "Wow(guau) estuvo dificil ¿verdad? bien hecho"
+            hide profe2
+            $ contador3 = contador3 + 1
+            jump resultadoTest4
+        "mango":
+            play sound "audio/correct-fx.mp3"
+            show profe2 at left
+            profe "Wow(guau) estuvo dificil ¿verdad? bien hecho"
+            hide profe2
+            $ contador3 = contador3 + 1
+            jump resultadoTest4
+        "Mango":
+            play sound "audio/correct-fx.mp3"
+            show profe2 at left
+            profe "Wow(guau) estuvo dificil ¿verdad? bien hecho"
+            hide profe2
+            $ contador3 = contador3 + 1
+            jump resultadoTest4
 
+label resultadoTest4:
+    show profe1 at left
+    profe "Bueno revisemos tus resultados..."
 
+    if contador3 == 5:
+        hide profe5
+        show profe2 at left
+        profe "¡Excelente trabajo!"
+        hide profe2
 
+    if contador3 == 3 or contador3 == 4:
+        hide profe5
+        show profe1 at left
+        profe "Bien hecho, cometiste unos errores pero no te preocupes, intentalo nuevamente si lo deseas"
+        profe "¿Quieres reintentar?"
+        menu:
+            "SI":
+                profe "Esa es la actitud, (Here we go again) vamos otra vez"
+                $ contador3 = 0
+                hide profe1
+                jump pregunta11
+            
+            "NO":
+                "De acuerdo, de todos modos lo hiciste muy bien"
+                
 
+    if contador3 == 0 or contador3 <= 2:
+        show profe5 at left
+        profe "No te preocupes, recuerda que tienes vidas infinitas :D"
+        $ contador3 = 0
+        hide profe5
+        jump pregunta11
 
+show profe1 at left 
+profe "Congratulations (felicitaciones) haz finalizado exitosamente el nivel 1 espero que hayas aprendido y lo más importante... que te hayas divertido mucho con nuestro programa nos veremos en el nivel 2, hasta pronto"
+    
 
     
 
