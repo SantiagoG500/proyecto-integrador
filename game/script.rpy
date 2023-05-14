@@ -759,7 +759,7 @@ label pregunta14:
             profe "Wonderful (maravilloso) complicada pero lo hiciste"
             hide profe2
             $ contador3 = contador3 + 1
-            jump pregunta14
+            jump pregunta15
         "pikmin":
             hide profe1
             play sound "audio/incorrect-fx.mp3"
